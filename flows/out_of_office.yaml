@@ -1,0 +1,16 @@
+name: out_of_office
+states:
+    check_if_open:
+        component: check_if_open
+        transitions:
+            open: is_open
+            closed: is_closed
+    is_open:
+        # stay silent
+        component: meya.pass
+        return: true
+    is_closed:
+        component: meya.text
+        properties:
+            text: "We are currently closed."
+        return: true
