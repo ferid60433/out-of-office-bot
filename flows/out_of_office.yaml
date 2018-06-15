@@ -1,4 +1,5 @@
-name: out_of_office
+triggers:
+  - type: meya.catchall
 states:
     check_if_open:
         component: check_if_open
